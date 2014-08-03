@@ -4,6 +4,7 @@ package com.CaseySinglehurst.gametest;
 
 
 
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.Log;
 
@@ -489,9 +490,11 @@ public class GameScreen extends Screen {
 		// TODO Auto-generated method stub
 		Graphics g = game.getGraphics();
 		Paint paint = new Paint();
-		paint.setColor(1000);
+		paint.setColor(Color.WHITE);
 		paint.setTextSize(50);
-		g.drawString("hello", 10, 10, paint);
+		g.clearScreen(0);
+		g.drawString("hello stranger", 100, 100, paint);
+		g.drawString(Integer.toString(m.metal), 175, 175, paint);
         Log.i("metal", "metal: " + m.metal);
 	}
 
