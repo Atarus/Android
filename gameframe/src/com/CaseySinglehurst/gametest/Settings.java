@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Calendar;
 
 import com.CaseySinglehurst.framework.FileIO;
 
@@ -15,7 +16,7 @@ public class Settings {
     
     public static int metal = 0;
     public static int metallevel = 1;
-
+    public static long oldtime = System.currentTimeMillis(), newtime = System.currentTimeMillis(), timeelapsed;
 
    
     public static void save(FileIO files) {
@@ -32,7 +33,10 @@ public class Settings {
             
             out.write(Integer.toString(metallevel));
             out.write("\n");
-       
+            oldtime = System.currentTimeMillis();
+            out.write(Long.toString(oldtime));
+            
+            
             
             
            // This section handles errors in file management!
@@ -57,7 +61,9 @@ public class Settings {
             // Loads values from the file and replaces default values.
             metal = Integer.parseInt(in.readLine());
             metallevel = Integer.parseInt(in.readLine());
-
+            oldtime =   Long.parseLong(in.readLine());
+            newtime = System.currentTimeMillis();
+            timeelapsed = ((newtime - oldtime)/1000);
             
             
         } catch (IOException e) {

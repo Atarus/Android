@@ -6,7 +6,6 @@ package com.CaseySinglehurst.gametest;
 
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 
 import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
@@ -482,7 +481,6 @@ public class GameScreen extends Screen {
 	@Override
 	public void update(float deltaTime) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -495,7 +493,6 @@ public class GameScreen extends Screen {
 		g.clearScreen(0);
 		g.drawString("hello stranger", 100, 100, paint);
 		g.drawString(Integer.toString(m.metal), 175, 175, paint);
-        Log.i("metal", "metal: " + m.metal);
 	}
 
 	@Override
@@ -512,6 +509,8 @@ public class GameScreen extends Screen {
 		Settings.load(game.getFileIO());
 		m.metal = Settings.metal;
 		m.level = Settings.metallevel;
+		m.metaladd((int)Math.round(Settings.timeelapsed));
+		
 	}
 
 	@Override

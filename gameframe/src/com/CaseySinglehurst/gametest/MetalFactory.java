@@ -14,15 +14,15 @@ public class MetalFactory {
 	Timer  timer = new Timer();
 	TimerTask task = new TimerTask(){
 		public void run(){
-			metaladd();
+			metaladd(1);
 		}
 	};
 	
 	
 	 timer.scheduleAtFixedRate(task,1000,1000);  
 	}	
-	void metaladd(){
-		 metal += (int)Math.round((100 + Math.exp(level)));
+	void metaladd(int times){
+		 metal += ((int)Math.round((100 + Math.exp(level)))*times);
 	}
 	
 	
