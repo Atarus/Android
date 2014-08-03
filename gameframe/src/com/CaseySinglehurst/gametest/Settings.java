@@ -16,6 +16,8 @@ public class Settings {
     
     public static int metal = 0;
     public static int metallevel = 1;
+    public static int metalStorage = 1000;
+    public static int metalStorageLevel = 1;
     public static long oldtime = System.currentTimeMillis(), newtime = System.currentTimeMillis(), timeelapsed;
 
    
@@ -33,6 +35,13 @@ public class Settings {
             
             out.write(Integer.toString(metallevel));
             out.write("\n");
+            
+            out.write(Integer.toString(metalStorage));
+            out.write("\n");
+            
+            out.write(Integer.toString(metalStorageLevel));
+            out.write("\n");
+            
             oldtime = System.currentTimeMillis();
             out.write(Long.toString(oldtime));
             
@@ -61,6 +70,8 @@ public class Settings {
             // Loads values from the file and replaces default values.
             metal = Integer.parseInt(in.readLine());
             metallevel = Integer.parseInt(in.readLine());
+            metalStorage = Integer.parseInt(in.readLine());
+            metalStorageLevel = Integer.parseInt(in.readLine());
             oldtime =   Long.parseLong(in.readLine());
             newtime = System.currentTimeMillis();
             timeelapsed = ((newtime - oldtime)/1000);
