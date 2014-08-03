@@ -1,0 +1,55 @@
+package com.CaseySinglehurst.gametest;
+
+import com.CaseySinglehurst.framework.Game;
+import com.CaseySinglehurst.framework.Graphics;
+import com.CaseySinglehurst.framework.Graphics.ImageFormat;
+import com.CaseySinglehurst.framework.Screen;
+
+public class LoadingScreen extends Screen {
+    public LoadingScreen(Game game) {
+        
+        super(game);
+    }
+
+    @Override
+    public void update(float deltaTime) {
+        Graphics g = game.getGraphics();
+        Assets.Menuscreen= g.newImage("Menuscreen.png", ImageFormat.ARGB4444);
+        try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        
+        game.setScreen(new MainMenuScreen(game));
+
+    }
+
+    @Override
+    public void paint(float deltaTime) {
+        Graphics g = game.getGraphics();
+        g.drawImage(Assets.Splashscreen, 0, 0);
+    }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void dispose() {
+
+    }
+
+    @Override
+    public void backButton() {
+
+    }
+}

@@ -1,0 +1,27 @@
+package com.CaseySinglehurst.gametest;
+
+import java.io.File;
+
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.os.Environment;
+
+import com.CaseySinglehurst.framework.implementation.AndroidFileIO;
+
+public class Saver {
+AndroidFileIO io = new AndroidFileIO();
+Context context;
+AssetManager assets;
+String externalStoragePath;
+
+public Saver(Context context) {
+    this.context = context;
+    this.assets = context.getAssets();
+    this.externalStoragePath = Environment.getExternalStorageDirectory()
+            .getAbsolutePath() + File.separator;
+    
+
+
+}
+	
+}

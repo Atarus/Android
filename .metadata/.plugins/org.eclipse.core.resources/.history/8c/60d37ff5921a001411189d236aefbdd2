@@ -1,0 +1,14 @@
+package com.CaseySinglehurst.gametest;
+
+
+public class MetalFactory {
+
+	public int level = 1;
+	
+	public int metaladd(){
+		return (int)Math.round((100 + Math.exp(level)));
+	}
+		 
+		 
+		 
+}

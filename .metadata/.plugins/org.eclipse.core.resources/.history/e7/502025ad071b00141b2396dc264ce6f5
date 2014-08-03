@@ -1,0 +1,43 @@
+package com.CaseySinglehurst.gametest;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+
+
+public class MetalFactory {
+	int level = 1, metal = 0;
+	Context context;
+	SharedPreferences sharedPref = context.getSharedPreferences
+			("com.example.myapp.PREFERENCE_METAL", Context.MODE_PRIVATE);
+	SharedPreferences.Editor editor = sharedPref.edit();
+	
+	MetalFactory(){
+	
+	
+	
+		 
+	Timer  timer = new Timer();
+	TimerTask task = new TimerTask(){
+		public void run(){
+			metaladd();
+			editor.putInt("metalpref", metal);
+			editor.commit();
+			int metalinpref;
+			metalinpref = sharedPref.getInt("metalpref",5);
+			Log.i("hi", "metal in preference: " + metalinpref);
+		}
+	};
+	
+	
+	 timer.scheduleAtFixedRate(task,1000,1000);  
+	}	
+	void metaladd(){
+		 metal += (int)Math.round((100 + Math.exp(level)));
+	}
+	
+	
+}

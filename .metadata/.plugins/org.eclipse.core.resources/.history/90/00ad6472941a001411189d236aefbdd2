@@ -1,0 +1,30 @@
+package com.CaseySinglehurst.gametest;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+
+public class MetalFactory {
+	int level = 1, metal = 0;
+	
+	MetalFactory(){
+	
+	
+	
+		 
+	Timer  timer = new Timer();
+	TimerTask task = new TimerTask(){
+		public void run(){
+			metaladd();
+		}
+	};
+	
+	
+	 timer.scheduleAtFixedRate(task,5000,5000);  
+	}	
+	void metaladd(){
+		 metal += (int)Math.round((100 + Math.exp(level)));
+	}
+	
+	
+}

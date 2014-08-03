@@ -1,0 +1,15 @@
+package com.CaseySinglehurst.gametest;
+
+import com.CaseySinglehurst.framework.Image;
+
+public class Assets {
+    
+    public static Image Splashscreen, Menuscreen;
+    
+    public static void load(SampleGame sampleGame) {
+        // TODO Auto-generated method stub
+    	
+    }
+    
+}
+ 
