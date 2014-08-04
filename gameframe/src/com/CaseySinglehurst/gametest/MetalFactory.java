@@ -12,7 +12,7 @@ public class MetalFactory {
 		Timer  timer = new Timer();
 		TimerTask task = new TimerTask(){
 			public void run(){
-				metalAdd(1);
+				addMetal(1);
 			}
 		};
 		
@@ -20,18 +20,19 @@ public class MetalFactory {
 		
 	}	
 	
-	void metalAdd(int times){
+	void addMetal(int times){
+		//metal += ((int)Math.round((100 + Math.exp(level)))*times);
 		int incrementValue = ((int)Math.round((100 + Math.exp(level)))*times);
 		
-		if ((metal+incrementValue) > storage){
-			metal = storage;
-		} else if ((metal+incrementValue)<=storage){
+		if ((metal+incrementValue)<=storage){
 			metal+=incrementValue;
-		}
+		} else if ((metal+incrementValue) > storage){
+			metal = storage;
+		} 
 		
 	}
 	
-	void update(int newStorage){
+	void updateFactory(int newStorage){
 		storage = newStorage;
 	}
 }
