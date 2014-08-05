@@ -1,11 +1,14 @@
 package com.CaseySinglehurst.gametest;
 
+import java.util.List;
+
 import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
 import com.CaseySinglehurst.framework.Screen;
+import com.CaseySinglehurst.framework.Input.TouchEvent;
 
 public class GameScreen extends Screen {
 
@@ -36,10 +39,17 @@ public class GameScreen extends Screen {
 	@Override
 	public void update(float deltaTime) {
 		// TODO Auto-generated method stub
+		List<TouchEvent> touchEvents = game.getInput().getTouchEvents();
+		int len = touchEvents.size();
 		
-		//ms.update();
-		//m.updateFactory(m.storage);
-		
+		for (int i = 0; i < len; i++) {
+            TouchEvent event = touchEvents.get(i);
+            if (event.type == TouchEvent.TOUCH_UP) {
+                    game.setScreen(new ColonyView(game));
+                
+
+            }
+        }
 	}
 
 	@Override
@@ -64,7 +74,7 @@ public class GameScreen extends Screen {
 		
 		//Draw
 		g.clearScreen(0);
-		g.drawRect(0, 0, 200, screenHeight, Color.WHITE);
+		g.drawRect(0, 0, 50, screenHeight, Color.WHITE);
 		
 		g.drawString(("Metal: " + String.format("%.1f", metalDraw) + "k"), (screenWidth - 500), 100, paint);
 		g.drawString(("Crystal: " + String.format("%.1f", crystalDraw) + "k"), (screenWidth - 500), 200, paint);
