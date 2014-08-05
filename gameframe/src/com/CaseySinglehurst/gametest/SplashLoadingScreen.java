@@ -1,9 +1,12 @@
 package com.CaseySinglehurst.gametest;
 
+import java.util.List;
+
 import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
 import com.CaseySinglehurst.framework.Screen;
 import com.CaseySinglehurst.framework.Graphics.ImageFormat;
+import com.CaseySinglehurst.framework.Input.TouchEvent;
 
 public class SplashLoadingScreen extends Screen {
     public SplashLoadingScreen(Game game) {
@@ -14,7 +17,6 @@ public class SplashLoadingScreen extends Screen {
     public void update(float deltaTime) {
         Graphics g = game.getGraphics();
         Assets.Splashscreen= g.newImage("Splashscreen.png", ImageFormat.ARGB8888);
-
         
         game.setScreen(new LoadingScreen(game));
 

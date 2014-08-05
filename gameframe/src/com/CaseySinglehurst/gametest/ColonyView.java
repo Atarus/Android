@@ -24,36 +24,21 @@ public class ColonyView extends Screen {
 		Graphics g = game.getGraphics();
 		int screenWidth = g.getWidth();
 		int screenHeight = g.getHeight();
+		g.clearScreen(0);
 		
 		//Initialise paint
 		Paint paint = new Paint();
 		paint.setColor(Color.WHITE);
 		paint.setTextSize(50);
 		
+		//Draw screen
+		renderGrid(g,screenWidth,screenHeight);
+		
 		//Draw Consistent Elements
-		g.clearScreen(0);
+		
 		g.drawRect(0, 0, 50, screenHeight, Color.WHITE);
 		
-		//Draw Colony Grid
-		int horizontalLines = screenHeight/50;
-		int verticalLines = screenWidth/50;
 		
-		//Draw vertical lines
-		for (int i = 0; i<verticalLines; i++){
-			g.drawLine(i*100, 0, i*100, screenHeight, Color.BLUE);
-		}
-		
-		//Draw horizontal lines
-		for (int i = 0; i<horizontalLines; i++){
-			g.drawLine(0, i*100, screenWidth, i*100, Color.BLUE);
-			
-			if (i == 5){
-				g.drawString("Missing Line?", (screenWidth - 500), i*100, paint);
-			}
-		}
-		
-		g.drawString(("hLines: " + Integer.toString(horizontalLines)), (screenWidth - 500), 100, paint);
-		g.drawString(("vLines: " + Integer.toString(verticalLines)), (screenWidth - 500), 200, paint);
 	}
 	
 	@Override
@@ -74,5 +59,23 @@ public class ColonyView extends Screen {
 	@Override
 	public void backButton() {
 		
+	}
+	
+	private void renderGrid(Graphics gra, int width, int height){
+		//Draw Colony Grid
+		int space = 100;
+		int horizontalLines = height/space;
+		int verticalLines = width/space + 1;
+		
+		
+		//Draw vertical lines
+		for (int i = 1; i<verticalLines; i++){
+			gra.drawLine(i*space, 0, i*space, height, Color.BLUE);
+		}
+		
+		//Draw horizontal lines
+		for (int i = 1; i<horizontalLines; i++){
+			gra.drawLine(0, i*space, width, i*space, Color.BLUE);
+		}
 	}
 }

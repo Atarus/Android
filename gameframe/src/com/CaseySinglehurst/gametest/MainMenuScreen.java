@@ -23,13 +23,13 @@ public class MainMenuScreen extends Screen {
 
         Log.i("im in","hello");
         for (int i = 0; i < len; i++) {
+        	Log.i("check event", "MainMenu: " + Integer.toString(i));
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
-
-                	g.clearScreen(10);
+                	g.clearScreen(0);
                     game.setScreen(new GameScreen(game));
-                
-
+            } else {
+            	
             }
         }
     }
@@ -56,7 +56,8 @@ public class MainMenuScreen extends Screen {
 
     @Override
     public void resume() {
-
+    	//Empty the event list from the splash screen.
+    	List<TouchEvent> touchEvents = game.getInput().getTouchEvents();
     }
 
     @Override

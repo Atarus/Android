@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 
 import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
@@ -43,11 +44,12 @@ public class GameScreen extends Screen {
 		int len = touchEvents.size();
 		
 		for (int i = 0; i < len; i++) {
+			Log.i("check event", "GameScreen: " + Integer.toString(i));
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
                     game.setScreen(new ColonyView(game));
-                
-
+            } else {
+            	touchEvents.clear();
             }
         }
 	}
