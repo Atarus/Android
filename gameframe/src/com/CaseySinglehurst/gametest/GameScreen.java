@@ -48,8 +48,6 @@ public class GameScreen extends Screen {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
                     game.setScreen(new ColonyView(game));
-            } else {
-            	touchEvents.clear();
             }
         }
 	}

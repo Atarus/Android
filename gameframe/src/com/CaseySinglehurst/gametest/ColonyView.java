@@ -32,10 +32,9 @@ public class ColonyView extends Screen {
 		paint.setTextSize(50);
 		
 		//Draw screen
-		renderGrid(g,screenWidth,screenHeight);
+		//renderGrid(g,screenWidth,screenHeight);
 		
 		//Draw Consistent Elements
-		
 		g.drawRect(0, 0, 50, screenHeight, Color.WHITE);
 		
 		
