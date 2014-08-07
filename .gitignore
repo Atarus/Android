@@ -25,7 +25,4 @@ gameframe/bin/gameframe.apk
 .metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
 .metadata/.plugins/org.eclipse.jdt.core/2774743780.index
 gameframe/.classpath
-gameframe/bin/classes.dex
 gameframe/bin/dexedLibs/android-support-v4-c30a99291e54b6c06583be9ddd08d588.jar
-gameframe/bin/gameframe.apk
-gameframe/bin/classes.dex

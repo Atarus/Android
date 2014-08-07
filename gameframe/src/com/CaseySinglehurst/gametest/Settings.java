@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Calendar;
 
+import com.CaseySinglehurst.facilities.*;
 import com.CaseySinglehurst.framework.FileIO;
 
 public class Settings {
@@ -31,7 +32,7 @@ public class Settings {
     public static int populationStorage = 0;
     public static int populationStorageLevel = 0;
     
-    public static long oldtime = System.currentTimeMillis(), newtime = System.currentTimeMillis(), timeelapsed;
+    public static long oldtime = System.currentTimeMillis(), newtime = System.currentTimeMillis(), timeElapsed;
 
    
     public static void save(FileIO files) {
@@ -44,9 +45,9 @@ public class Settings {
             
             // Line by line ("\n" creates a new line), write the value of each variable to the file.
             out = writeMetal(out);
-            out = writeCrystal(out);
-            out = writeFuel(out);
-            out = writePopulation(out);
+            //out = writeCrystal(out);
+            //out = writeFuel(out);
+            //out = writePopulation(out);
            
             oldtime = System.currentTimeMillis();
             out.write(Long.toString(oldtime));
@@ -75,13 +76,13 @@ public class Settings {
 
             // Loads values from the file and replaces default values.
             in = readMetal(in);
-            in = readCrystal(in);
-            in = readFuel(in);
-            in = readPopulation(in);
+            //in = readCrystal(in);
+            //in = readFuel(in);
+            //in = readPopulation(in);
             
             oldtime =   Long.parseLong(in.readLine());
             newtime = System.currentTimeMillis();
-            timeelapsed = ((newtime - oldtime)/1000);
+            timeElapsed = ((newtime - oldtime)/1000);
             
             
         } catch (IOException e) {
@@ -217,31 +218,31 @@ public class Settings {
     	return populationIn;
     }
 
-    static void setMetal(int newMetal, int newMetalLevel, int newMetalStorage, int newMetalStorageLevel){
-    	metal = newMetal;
-    	metalLevel = newMetalLevel;
-    	metalStorage = newMetalStorage;
-    	metalStorageLevel = newMetalStorageLevel;
+    public static void setMetal(MetalResource metalResource){
+    	metal = metalResource.getMetal();
+    	metalLevel = metalResource.getLevel();
+    	metalStorage = metalResource.getStorage();
+    	metalStorageLevel = metalResource.getStorageLevel();
     }
 
-    static void setCrystal(int newCrystal, int newCrystalLevel, int newCrystalStorage, int newCrystalStorageLevel){
-    	crystal = newCrystal;
-    	crystalLevel = newCrystalLevel;
-    	crystalStorage = newCrystalStorage;
-    	crystalStorageLevel = newCrystalStorageLevel;
+    public static void setCrystal(CrystalResource crystalResource){
+    	crystal = crystalResource.getCrystal();
+    	crystalLevel = crystalResource.getLevel();
+    	crystalStorage = crystalResource.getStorage();
+    	crystalStorageLevel = crystalResource.getStorageLevel();
     }
     
-    static void setFuel(int newFuel, int newFuelLevel, int newFuelStorage, int newFuelStorageLevel){
-    	fuel = newFuel;
-    	fuelLevel = newFuelLevel;
-    	fuelStorage = newFuelStorage;
-    	fuelStorageLevel = newFuelStorageLevel;
+    public static void setFuel(FuelResource fuelResource){
+    	fuel = fuelResource.getFuel();
+    	fuelLevel = fuelResource.getLevel();
+    	fuelStorage = fuelResource.getStorage();
+    	fuelStorageLevel = fuelResource.getStorageLevel();
     }
     
-    static void setPopulation(int newPopulation, int newPopulationLevel, int newPopulationStorage, int newPopulationStorageLevel){
-    	population = newPopulation;
-    	populationLevel = newPopulationLevel;
-    	populationStorage = newPopulationStorage;
-    	populationStorageLevel = newPopulationStorageLevel;
+    public static void setPopulation(PopulationResource populationResource){
+    	population = populationResource.getPopulation();
+    	populationLevel = populationResource.getLevel();
+    	populationStorage = populationResource.getStorage();
+    	populationStorageLevel = populationResource.getStorageLevel();
     }
 }

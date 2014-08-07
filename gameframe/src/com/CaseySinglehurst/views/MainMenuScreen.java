@@ -1,4 +1,4 @@
-package com.CaseySinglehurst.gametest;
+package com.CaseySinglehurst.views;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
 import com.CaseySinglehurst.framework.Screen;
 import com.CaseySinglehurst.framework.Input.TouchEvent;
+import com.CaseySinglehurst.gametest.Assets;
 
 public class MainMenuScreen extends Screen {
     public MainMenuScreen(Game game) {
@@ -27,7 +28,7 @@ public class MainMenuScreen extends Screen {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
                 	g.clearScreen(0);
-                    game.setScreen(new GameScreen(game));
+                    game.setScreen(new PlanetView(game, this));
             } else {
             	
             }

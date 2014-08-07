@@ -1,5 +1,7 @@
 package com.CaseySinglehurst.framework.implementation;
 
+import java.util.*;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -11,21 +13,19 @@ import android.os.PowerManager.WakeLock;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.CaseySinglehurst.framework.Audio;
-import com.CaseySinglehurst.framework.FileIO;
-import com.CaseySinglehurst.framework.Game;
-import com.CaseySinglehurst.framework.Graphics;
-import com.CaseySinglehurst.framework.Input;
-import com.CaseySinglehurst.framework.Screen;
+import com.CaseySinglehurst.framework.*;
+import com.CaseySinglehurst.facilities.*;
+import com.CaseySinglehurst.gametest.Settings;
 
 public abstract class AndroidGame extends Activity implements Game {
-    AndroidFastRenderView renderView;
+    
+	AndroidFastRenderView renderView;
     Graphics graphics;
     Audio audio;
     Input input;
     FileIO fileIO;
     Screen screen;
-    WakeLock wakeLock;
+    WakeLock wakeLock;	
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package com.CaseySinglehurst.gametest;
+package com.CaseySinglehurst.views;
 
 import android.util.Log;
 
@@ -6,6 +6,7 @@ import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
 import com.CaseySinglehurst.framework.Graphics.ImageFormat;
 import com.CaseySinglehurst.framework.Screen;
+import com.CaseySinglehurst.gametest.Assets;
 
 public class LoadingScreen extends Screen {
 	int timer = 0;
