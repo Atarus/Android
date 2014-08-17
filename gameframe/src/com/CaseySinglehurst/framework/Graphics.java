@@ -28,4 +28,7 @@ public interface Graphics {
 
     public void drawARGB(int i, int j, int k, int l);
 
+	void drawScaledImage(Image Image, int x, int y, int width, int height,
+			int srcX, int srcY, int srcWidth, int srcHeight);
+
 }

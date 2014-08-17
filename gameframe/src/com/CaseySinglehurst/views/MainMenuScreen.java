@@ -48,7 +48,8 @@ public class MainMenuScreen extends Screen {
     public void paint(float deltaTime) {
         Graphics g = game.getGraphics();
         g.clearScreen(255);
-        g.drawImage(Assets.Menuscreen, 0, 0);
+        g.drawScaledImage(Assets.Menuscreen, 0, 0, g.getWidth(), g.getHeight(), 0, 0,
+        		Assets.Menuscreen.getWidth(),Assets.Menuscreen.getHeight());
     }
 
     @Override

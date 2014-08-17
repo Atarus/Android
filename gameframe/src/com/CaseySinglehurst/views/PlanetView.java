@@ -11,6 +11,7 @@ import com.CaseySinglehurst.framework.Game;
 import com.CaseySinglehurst.framework.Graphics;
 import com.CaseySinglehurst.framework.Screen;
 import com.CaseySinglehurst.framework.Input.TouchEvent;
+import com.CaseySinglehurst.gametest.Assets;
 import com.CaseySinglehurst.gametest.Settings;
 
 public class PlanetView extends Screen {
@@ -79,6 +80,10 @@ public class PlanetView extends Screen {
 		
 		//Clear Screen
 		g.clearScreen(0);
+		
+		//draw planet in background
+		   g.drawScaledImage(Assets.Planet, 0, 0, g.getWidth(), g.getHeight(), 0, 0,
+	        		Assets.Planet.getWidth(),Assets.Planet.getHeight());
 		
 		//Draw UI
 		g.drawRect(0,0,screenWidth,75,Color.DKGRAY);

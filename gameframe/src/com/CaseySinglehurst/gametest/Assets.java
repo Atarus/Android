@@ -6,7 +6,7 @@ import com.CaseySinglehurst.framework.Image;
 
 public class Assets {
     
-    public static Image Splashscreen, Menuscreen;
+    public static Image Splashscreen, Menuscreen,Planet;
 	
     
     public static void load(SampleGame sampleGame) {

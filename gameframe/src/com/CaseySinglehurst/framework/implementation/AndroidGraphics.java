@@ -131,7 +131,7 @@ public class AndroidGraphics implements Graphics {
     public void drawImage(Image Image, int x, int y) {
         canvas.drawBitmap(((AndroidImage)Image).bitmap, x, y, null);
     }
-    
+    @Override
     public void drawScaledImage(Image Image, int x, int y, int width, int height, int srcX, int srcY, int srcWidth, int srcHeight){
         
         
@@ -161,6 +161,7 @@ public class AndroidGraphics implements Graphics {
     public int getHeight() {
         return frameBuffer.getHeight();
     }
+
 
 	
 }
